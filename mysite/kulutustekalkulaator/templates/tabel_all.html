@@ -1,0 +1,61 @@
+{% extends "tabel_master.html" %}
+
+{% block title %}
+  Kulutustekalkulaator
+{% endblock %}
+
+
+{% block content %}
+
+  <p><a href="/admin/kulutustekalkulaator/sisestatav/">HOME</a></p>
+
+  <h1>Members</h1>
+  
+  <ul>
+    {% if user.is_authenticated %}
+    <form action="" method="post">{% csrf_token %}
+    <table>
+        <tr><th>võlgneja</th><th>makstav</th><th>väärtus</th><th>kirjeldus</th></tr>
+    
+    {% for x in sise %}
+    <tr>
+        <td>{{ x.võlgneja }}</td>
+        <td>{{ x.makstav }}</td>
+        <td>{{ x.väärtus }}</td>
+        <td>{{ x.kirjeldus }}</td>
+    </tr>
+    
+
+    {% endfor %}
+    <tr>
+      <th>nimi_a</th>
+      <th>nimi_b</th>
+      <th>summa</th>
+      <th>info</th>
+    </tr>
+    <tr>
+      <td>{{ user.get_username }}</td>
+      <td><input id="nimi_b" type="text" name="nimi_b"></td>
+      <td><input id="summa" type="text" name="summa"></td>
+      <td><input id="info" type="text" name="info"></td>
+      <td><input type="submit" value="insert"></td>
+    </tr>
+    </table>
+    </form>
+    <table>
+        <tr><th>nimi</th><th>väärtus</th></tr>
+    
+    {% for x2 in sise2 %}
+    <tr>
+        <td>{{ x2.nimi }}</td>
+        <td>{{ x2.väärtus }}</td>
+    </tr>
+
+    {% endfor %}
+    </table>
+    {% endif %}
+
+    
+
+  </ul>
+{% endblock %}

@@ -1,0 +1,32 @@
+ma ei kasutanud seda
+
+{% if tabellist %}
+    <table>
+        <tr>
+            <th>Võlgneja</th>
+            {% for võlgneja in tabellist %}
+            <th>{{ võlgneja.võlgneja }}</th>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>Makstav</th>
+            {% for makstav in tabellist %}
+            <th>{{ makstav }}</th>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>Summa</th>
+            {% for väärtus in tabellist %}
+            <th>{{ väärtus }}</th>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>Kirjeldus</th>
+            {% for kirjeldus in tabellist %}
+            <th>{{ kirjeldus }}</th>
+            {% endfor %}
+        </tr>
+    </table>
+{% else %}
+    <p>Tabeli jaoks info puudub.</p>
+{% endif %}

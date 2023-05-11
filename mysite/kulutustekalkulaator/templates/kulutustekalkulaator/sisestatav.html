@@ -1,0 +1,13 @@
+ma ei kasutanud seda
+
+<form action="{% url 'kulutustekalkulaator:tabel' võlgneja %}" method="post">
+    <label for="võlgneja">Võlgneja:</label><br>
+    <input type="text" id="võlgneja" name="võlgneja"><br>
+    <label for="makstav">Makstav:</label><br>
+    <input type="text" id="makstav" name="makstav"><br>
+    <label for="väärtus">Väärtus:</label><br>
+    <input type="text" id="väärtus" name="väärtus"><br>
+    <label for="kirjeldus">Kirjeldus, kirjuta - kui puudub:</label><br>
+    <input type="text" id="kirjeldus" name="kirjeldus"><br>
+    <input type="submit" value="Submit">
+</form>
